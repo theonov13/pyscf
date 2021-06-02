@@ -145,9 +145,10 @@ if(ENABLE_LIBXC AND BUILD_LIBXC)
   endif()
 if(APPLE)
   ExternalProject_Add(libxc
-    #GIT_REPOSITORY https://gitlab.com/libxc/libxc/
-    #GIT_TAG master
-    URL http://www.tddft.org/programs/libxc/down.php?file=4.3.4/libxc-4.3.4.tar.gz
+    # SS
+    GIT_REPOSITORY https://gitlab.com/libxc/libxc/
+    GIT_TAG master
+    #URL http://www.tddft.org/programs/libxc/down.php?file=4.3.4/libxc-4.3.4.tar.gz
     #URL https://gitlab.com/libxc/libxc/-/archive/4.3.4/libxc-4.3.4.tar.gz
     #URL http://www.sunqm.net/pyscf/files/src/libxc-4.3.4.tar.gz
     PREFIX ${PROJECT_BINARY_DIR}/deps
@@ -166,11 +167,12 @@ if(APPLE)
   )
 else()
   ExternalProject_Add(libxc
-    #GIT_REPOSITORY https://gitlab.com/libxc/libxc/
-    #GIT_TAG master
+      # SS
+    GIT_REPOSITORY https://gitlab.com/libxc/libxc/
+    GIT_TAG master
     #URL http://www.tddft.org/programs/octopus/down.php?file=libxc/4.3.4/libxc-4.3.4.tar.gz
     #URL https://gitlab.com/libxc/libxc/-/archive/4.3.4/libxc-4.3.4.tar.gz
-    URL http://www.sunqm.net/pyscf/files/src/libxc-4.3.4.tar.gz
+    #URL http://www.sunqm.net/pyscf/files/src/libxc-4.3.4.tar.gz
     PREFIX ${PROJECT_BINARY_DIR}/deps
     INSTALL_DIR ${PROJECT_SOURCE_DIR}/deps
     BUILD_IN_SOURCE 1
